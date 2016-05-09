@@ -622,15 +622,22 @@ public class PaletteManagerImpl implements PaletteManager {
     }
 
     private static List<ToolEntry> getDefaultTools(final ResourceSet context) {
+        
         final Resource coreEnvResource = context.getResource(URI.createURI(SiriusUtil.VIEWPOINT_ENVIRONMENT_RESOURCE_URI, true), true);
         final Environment coreEnv = (Environment) coreEnvResource.getContents().get(0);
-
-        final Resource diagramEnvResource = context.getResource(URI.createURI(SiriusDiagramUtil.DIAGRAM_ENVIRONMENT_RESOURCE_URI, true), true);
-        final Environment diagramEnv = (Environment) diagramEnvResource.getContents().get(0);
-
         List<ToolEntry> defaultTools = Lists.newArrayList();
-        defaultTools.addAll(coreEnv.getDefaultTools());
-        defaultTools.addAll(diagramEnv.getDefaultTools());
+        try {
+            final Resource diagramEnvResource = context.getResource(URI.createURI(SiriusDiagramUtil.DIAGRAM_ENVIRONMENT_RESOURCE_URI, true), true);
+            if (!diagramEnvResource.getContents().isEmpty()) {
+                final Environment diagramEnv = (Environment) diagramEnvResource.getContents().get(0);
+                defaultTools.addAll(coreEnv.getDefaultTools());
+                defaultTools.addAll(diagramEnv.getDefaultTools());
+            }
+        } catch (Exception e) {
+            // DiagramPlugin.getDefault().logWarning(MessageFormat.format(Messages.PaletteManagerImpl_severalCandidatesInPalette, type.getName(), id));
+            DiagramPlugin.getDefault().logWarning("Unexpected exception", e); //$NON-NLS-1$
+            
+        }
         return defaultTools;
     }
 
