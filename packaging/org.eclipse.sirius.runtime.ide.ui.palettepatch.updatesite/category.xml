@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.sirius.runtime.ide.ui.palettepatch_1.0.0.jar" id="org.eclipse.sirius.runtime.ide.ui.palettepatch" version="1.0.0" patch="true">
+      <category name="SiriusPalettePatch"/>
+   </feature>
+   <category-def name="SiriusPalettePatch" label="SiriusPalettePatch"/>
+</site>

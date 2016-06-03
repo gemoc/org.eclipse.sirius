@@ -269,6 +269,43 @@
       </modules>
     </profile>
     <profile>
+      <id>palettepatch</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <target-platform-path>.</target-platform-path>
+      </properties>
+      <modules>
+        <!-- plugins -->
+        <module>../../plugins/org.eclipse.sirius</module>
+        <module>../../plugins/org.eclipse.sirius.common</module>
+        <module>../../plugins/org.eclipse.sirius.common.ui</module>
+        <module>../../plugins/org.eclipse.sirius.diagram</module>
+        <module>../../plugins/org.eclipse.sirius.diagram.layoutdata</module>
+        <module>../../plugins/org.eclipse.sirius.diagram.ui</module> <!-- the plugin we really want -->
+        <module>../../plugins/org.eclipse.sirius.ecore.extender</module>
+        <module>../../plugins/org.eclipse.sirius.ext.base</module>
+        <module>../../plugins/org.eclipse.sirius.ext.draw2d</module>
+        <module>../../plugins/org.eclipse.sirius.ext.e3</module>
+        <module>../../plugins/org.eclipse.sirius.ext.e3.ui</module>
+        <module>../../plugins/org.eclipse.sirius.ext.emf</module>
+        <module>../../plugins/org.eclipse.sirius.ext.emf.tx</module>
+        <module>../../plugins/org.eclipse.sirius.ext.emf.ui</module>
+        <module>../../plugins/org.eclipse.sirius.ext.gef</module>
+        <module>../../plugins/org.eclipse.sirius.ext.gmf.runtime</module>
+        <module>../../plugins/org.eclipse.sirius.ext.jface</module>
+        <module>../../plugins/org.eclipse.sirius.ext.swt</module>
+        <module>../../plugins/org.eclipse.sirius.ui</module>
+
+        <!-- features -->
+        <module>../../packaging/org.eclipse.sirius.runtime.ide.ui.palettepatch</module>
+
+        <!-- update sites -->
+        <module>../../packaging/org.eclipse.sirius.runtime.ide.ui.palettepatch.updatesite</module>
+      </modules>
+    </profile>
+    <profile>
       <id>full</id>
       <activation>
         <activeByDefault>true</activeByDefault>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.sirius.runtime.ide.ui.palettepatch"
+      label="Palette Patch for Sirius"
+      version="1.0.0"
+      provider-name="Inria">
+
+   <description url="http://www.example.com/description">
+      Patch for Sirius that fails with a strange &quot;invalid protocol : archive&quot;
+
+
+Prblemn in class org.eclipse.sirius.diagram.ui.tools.internal.palette.PaletteManagerImpl (in src-diag), 
+
+private static List&lt;ToolEntry&gt; getDefaultTools(final ResourceSet context) {
+        final Resource coreEnvResource = context.getResource(URI.createURI(SiriusUtil.VIEWPOINT_ENVIRONMENT_RESOURCE_URI, true), true);
+        final Environment coreEnv = (Environment) coreEnvResource.getContents().get(0);
+        List&lt;ToolEntry&gt; defaultTools = Lists.newArrayList();
+        try {
+            final Resource diagramEnvResource = context.getResource(URI.createURI(SiriusDiagramUtil.DIAGRAM_ENVIRONMENT_RESOURCE_URI, true), true);
+            if (!diagramEnvResource.getContents().isEmpty()) {
+                final Environment diagramEnv = (Environment) diagramEnvResource.getContents().get(0);
+                defaultTools.addAll(coreEnv.getDefaultTools());
+                defaultTools.addAll(diagramEnv.getDefaultTools());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return defaultTools;
+    }
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.sirius.runtime.ide.ui" version="3.1.4.201602091241" patch="true"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.sirius.diagram.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
