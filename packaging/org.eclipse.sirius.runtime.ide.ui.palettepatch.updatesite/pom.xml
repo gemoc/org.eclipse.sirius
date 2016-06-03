@@ -23,6 +23,7 @@
 
   <artifactId>org.eclipse.sirius.runtime.ide.ui.paletterpatch.updatesite</artifactId>
   <packaging>eclipse-repository</packaging>
+  <version>1.0.0-SNAPSHOT</version>
 
   
 

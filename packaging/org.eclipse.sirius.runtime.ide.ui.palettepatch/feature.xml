@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.sirius.runtime.ide.ui.palettepatch"
       label="Palette Patch for Sirius"
-      version="1.0.0"
+      version="1.0.0.qualifier"
       provider-name="Inria">
 
    <description url="http://www.example.com/description">
